@@ -18,8 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-        ref: 2.x
-        submodules: recursive
+          ref: 2.x
+          submodules: recursive
+
+      - name: Debug commit
+        run: |
+          git rev-parse HEAD
+          git log -1 --oneline
 
       - name: Install Procursus
         uses: dhinakg/procursus-action@main
