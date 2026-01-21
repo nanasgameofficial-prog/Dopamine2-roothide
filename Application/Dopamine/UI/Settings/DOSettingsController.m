@@ -612,7 +612,7 @@
         UIAlertAction *rebootNowAction = [UIAlertAction actionWithTitle:DOLocalizedString(@"Menu_Reboot_Userspace_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if(jbclient_set_dyld_patch(enable) == 0) {
                 [self setPreferenceValue:value specifier:specifier];
-                [[DOEnvironmentManager sharedManager] rebootUserspace];
+                [[DOEnvironmentManager sharedManager] semiReboot];
             } else {
                 [self reloadSpecifiers];
             }
